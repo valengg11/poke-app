@@ -20,18 +20,17 @@ export const GetPokemonList = (page) => async dispatch => {
   }
 }
 
-export const GetPokemonList = (pokemon) => async dispatch => {
+export const GetPokemon = (pokemon) => async dispatch => {
   try {
     dispatch({
       type: 'POKEMON_MULTIPLE_LOADING'
     })
-    const perPage = 20
-    const offset = (page * perPage) - perPage
-    const url = 'https://pokeapi.co/api/v2/pokemon/' + { pokemon }
+    const url = 'https://pokeapi.co/api/v2/pokemon/' + pokemon 
     const res = await axios.get(url)
     dispatch({
       type: 'POKEMON_MULTIPLE_SUCCESS',
-      payload: res.data
+      payload: res.data,
+      pokemonName: pokemon
     })
   } catch (e) {
     dispatch({
