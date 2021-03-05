@@ -17,6 +17,11 @@ nav a {
   text-decoration: none;
 }
 
+.homeContainer{
+  text-align: center;
+
+}
+
 .list-container{
   width: 90%;
   margin: auto;
@@ -39,7 +44,8 @@ nav a {
 .pokemon-container{
   margin: 7%;
   padding: 5%;
-  background-color: antiquewhite;
+  border: 1px black solid;
+  border-radius: 10px;
   font-size: 1rem;
 }
 
@@ -56,5 +62,12 @@ nav a {
   margin-bottom: 20px;
 }
 
+.search-container{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
 
 
