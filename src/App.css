@@ -32,3 +32,29 @@ nav a {
   padding: 10px;
 }
 
+.pokemonImage{
+  float: left;
+}
+
+.pokemon-container{
+  margin: 7%;
+  padding: 5%;
+  background-color: antiquewhite;
+  font-size: 1rem;
+}
+
+.pokemon-container h2{
+  font-size: 25px;
+}
+
+.heightweight{
+  margin-bottom: 30px;
+}
+
+.pokemonName{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+

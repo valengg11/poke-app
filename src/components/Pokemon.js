@@ -2,6 +2,8 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { GetPokemon } from '../actions/pokemonAtions'
 import _ from 'lodash'
+import '.././App.css'
+import { Container, Row, Col } from 'react-bootstrap/'
 
 const Pokemon = (props) => {
   const pokemonName = props.match.params.pokemon
@@ -16,21 +18,40 @@ const Pokemon = (props) => {
       const pokeData = pokemonState.data[pokemonName]
       // const urlImage = 'https://github.com/PokeAPI/sprites/tree/146c91287ad01f6e15315bbd733fd7442c91fe6d/sprites/pokemon/' + pokeData.id + '.png'
 
-      console.log(pokeData.id)
-
       return (
         <div className={'pokemon-container'}>
-          <div className={'pokemonImage'}>
-            {/* <img src= /> */}
-          </div>
-          <div>
-            <h2>Height</h2>
-            {pokeData.height}
-            <h2>Weight</h2>
-            {pokeData.weight}
-            <h2>Attack</h2>
-            {pokeData.attack}
-          </div>
+          <Container>
+            <Row>
+              <Col className={'pokemonName'}>
+                <h1>{pokemonName}</h1>
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={6} >
+                <div className={'pokemonImage'}>
+
+                  Here is the image
+                  {/* <img src= /> */}
+                </div>
+              </Col>
+              <Col xs={6} sm={3} >
+                <div className={'heightweight'}>
+                  <h2>Height</h2>
+                  {pokeData.height}
+                </div>
+                <div className={'heightweight'}>
+                  <h2>Weight</h2>
+                  {pokeData.weight}
+                </div>
+              </Col>
+              <Col xs={6} sm={3} >
+                <h2>Stats</h2>
+                {pokeData.stats.map(e1 => {
+                  return <p>{e1.stat.name} {e1.base_stat}</p>
+                })}
+              </Col>
+            </Row>
+          </Container>
         </div>
       )
     }
@@ -45,7 +66,6 @@ const Pokemon = (props) => {
 
   return (
     <div>
-      <h1>{pokemonName}</h1>
       {ShowData()}
     </div>
   )
