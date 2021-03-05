@@ -4,6 +4,7 @@ import {useState} from 'react'
 import _ from 'lodash'
 import { GetPokemonList } from '../actions/pokemonAtions'
 import { Link } from 'react-router-dom'
+// import ReactPaginate from 'react-paginate'
 
 const PokemonList = (props) => {
     const [search, setSearch] = useState('')
@@ -49,6 +50,9 @@ const PokemonList = (props) => {
 
             </div>
             {ShowData()}
+            {/* {!_.isEmpty(pokemonList.data) && (
+
+            )} */}
         </div>
     )
 }

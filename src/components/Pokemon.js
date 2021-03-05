@@ -16,7 +16,7 @@ const Pokemon = (props) => {
   const ShowData = () => {
     if (pokemonState.data[pokemonName]) {
       const pokeData = pokemonState.data[pokemonName]
-      // const urlImage = 'https://github.com/PokeAPI/sprites/tree/146c91287ad01f6e15315bbd733fd7442c91fe6d/sprites/pokemon/' + pokeData.id + '.png'
+      const urlImage = `https://github.com/PokeAPI/sprites/tree/146c91287ad01f6e15315bbd733fd7442c91fe6d/sprites/pokemon/1.png`
 
       return (
         <div className={'pokemon-container'}>
@@ -29,9 +29,7 @@ const Pokemon = (props) => {
             <Row>
               <Col sm={6} >
                 <div className={'pokemonImage'}>
-
-                  Here is the image
-                  {/* <img src= /> */}
+                  <img src={urlImage} alt='Here is the image'/>
                 </div>
               </Col>
               <Col xs={6} sm={3} >
