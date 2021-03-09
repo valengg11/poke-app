@@ -1,8 +1,8 @@
 .card {
   height: 100%;
-  /* width: 300px; */
+  width: 200px;
   margin: 20px auto;
-  border-radius: 10%;
+  border-radius: 20%;
   align-items: center;
   border: 1px solid #D3D3D3;
 }
@@ -19,5 +19,4 @@
  }
 
  .body{
-   background-color: #D;
  }

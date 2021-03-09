@@ -15,7 +15,7 @@ const PokemonCard = ({ pokemonName, url }) => {
             <Card className={style.card}>
               <Card.Img className={style.image} variant="top" src={urlPokemonImage} />
               <Card.Body className={style.body}>
-                <Card.Title>{pokemonName}</Card.Title>
+                <Card.Title>{pokemonName.toUpperCase()}</Card.Title>
               </Card.Body>
             </Card>
           {/* </Col>

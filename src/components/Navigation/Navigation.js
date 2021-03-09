@@ -6,7 +6,7 @@ const Navigation = () => {
     return (
         <nav>
             <Navbar bg="light" variant="light">
-                <Navbar.Brand href="#home">PokeApp</Navbar.Brand>
+                <Navbar.Brand href="#home">Pokedex</Navbar.Brand>
                 <Nav className="mr-auto">
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/pokemon">Pokemons</Nav.Link>

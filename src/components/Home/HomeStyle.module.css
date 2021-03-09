@@ -1,3 +1,16 @@
 .homeContainer {
-  text-align: center;
+  width: 100%;
+  margin: 180px auto;
+  vertical-align: center;
+  /* text-align: end; */
+  /* background-color: cornflowerblue;
+  color: aliceblue; */
+  padding: 20px;
 }
+
+.title{
+  background-color: red;
+  color: white;
+}
+
+

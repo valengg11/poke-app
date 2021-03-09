@@ -17,6 +17,8 @@ const initialState = {
     error: null,
     pokemonSelection: [],
     showPokemonInfo: false,
+    selectedPokemon: false,
+    chargedPokemons: 0
     
 
 
@@ -51,30 +53,30 @@ function pokemons(state = initialState, action) {
         return {
           ...state,
           showPokemonInfo: true,
-          keepSelected: true,
-        selectedPokemons: [
-          ...state.selectedPokemons,
+          selectedPokemon: true,
+          pokemonSelection: [
+          ...state.pokemonSelection,
           {
             ...action.payload.pokemon,
-            ...action.payload.pokemonInfo,
-            ...action.payload.pokemonDescription,
+            ...action.payload.information,
+            ...action.payload.description,
           }
         ]
       }
     case NOT_SELECTED_POKEMON:
       return {
         ...state,
-        showSelected: false,
-        keepSelected: false,
-        selectedPokemons: []
+        showPokemonInfo: false,
+        selectedPokemon: false,
+        pokemonSelection: []
       }
     case SELECTED_POKEMONS:
       return {
         ...state,
-        showSelected: false,
-        keepSelected: true,
-        selectedPokemons: [
-          ...state.selectedPokemons
+        showPokemonInfo: false,
+        selectedPokemon: true,
+        pokemonSelection: [
+          ...state.pokemonSelection
         ]
       }
     case POKEMON_SELECTION_ERROR:
@@ -87,7 +89,7 @@ function pokemons(state = initialState, action) {
       return {
         ...state,
         isFetching: false,
-        scrollCounter: action.payload.scrollCounter
+        chargedPokemons: action.payload.chargedPokemons
       }
 
         default:

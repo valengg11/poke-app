@@ -35,24 +35,24 @@ export const fetchData = (counter) => (dispatch) => {
     })
 }
 
-export const pokemonSelection = (pokemon, pokemonUrl, pokemonDescriptionUrl ) => (dispatch) => {
+export const pokemonSelection = (pokemon, pokeInfoUrl, pokeDescriptionUrl ) => (dispatch) => {
   Promise.all([
-    fetch(pokemonUrl).then(pokeInfo => pokeInfo.json()),
-    fetch(pokemonDescriptionUrl).then(pokeDes => pokeDes.json())
-  ]).then(([pokeInfo, pokeDes]) => {
-    if (pokeDes.gender_rate >= 4) {
-      pokeDes.gender_rate = 'female'
-    } else if (pokeDes.gender_rate === -1) {
-      pokeDes.gender_rate = 'genderless'
+    fetch(pokeInfoUrl).then(information => information.json()),
+    fetch(pokeDescriptionUrl).then(description => description.json())
+  ]).then(([information, description]) => {
+    if (description.gender_rate >= 0 && description.gender_rate <=4) {
+      description.gender_rate = 'male'
+    } else if (description.gender_rate === -1) {
+      description.gender_rate = 'genderless'
     } else {
-      pokeDes.gender_rate = 'male'
+      description.gender_rate = 'female'
     }
     dispatch({
       type: POKEMON_SELECTION,
       payload: {
         pokemon: pokemon,
-        pokemonInfo: pokeInfo,
-        pokemonDescription: pokeDes,
+        information: information,
+        description: description,
       }
     })
   })
@@ -66,7 +66,7 @@ export const pokemonSelection = (pokemon, pokemonUrl, pokemonDescriptionUrl ) =>
     })
 }
 
-export const SelectedPokemons = (pokemon) => (dispatch) => {
+export const selectedPokemons = (pokemon) => (dispatch) => {
   dispatch({
     type: SELECTED_POKEMONS,
     payload: {
@@ -84,11 +84,11 @@ export const notSelectedPokemons = () => (dispatch) => {
   })
 }
 
-export const countPokemon = (scrollCounter) => (dispatch) => {
+export const pokemonCount = (chargedPokemons) => (dispatch) => {
   dispatch({
     type: POKEMON_COUNT,
     payload: {
-      scrollCounter: scrollCounter + 20
+      chargedPokemons: chargedPokemons + 20
     }
   })
 }
