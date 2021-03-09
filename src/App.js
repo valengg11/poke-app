@@ -1,24 +1,23 @@
 import React from 'react'
 import './App.css';
-import { BrowserRouter, Route, NavLink, Redirect } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 import PokemonList from './components/PokemonList'
-import Pokemon from './components/Pokemon'
 import Home from './components/Home'
+import store from './redux/store'
+import {Provider} from 'react-redux'
+import Navigation from './components/Navigation'
 
 
 function App() {
   return (
     <div className="App">
-      <nav>
-        <NavLink to={'/Home'}>Home</NavLink>
-        <NavLink to={'/pokemon'}>See all pokemons</NavLink>   
-      </nav>
+      <Provider store={store}>
       <BrowserRouter>
-        <Route path={'/'} exact component={Home} />
+      <Navigation/>
+        <Route path={'/'} exact component={PokemonList} />
         <Route path={'/pokemon'} exact component={PokemonList} />
-        <Route path={'/pokemon/:pokemon'} exact component={Pokemon} />
-        <Redirect to={'/'} />
       </BrowserRouter>
+      </Provider>
     </div>
   );
 }

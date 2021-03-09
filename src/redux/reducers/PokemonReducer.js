@@ -24,8 +24,8 @@ function pokemons(state = initialState, action) {
         return {
           ...state,
           isFetching: false,
-          pokemonsList: [
-            ...state.pokemonsList,
+          cardList: [
+            ...state.cardList,
             ...action.payload.pokemons.results
           ],
         }
