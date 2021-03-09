@@ -9,6 +9,7 @@ const Navigation = () => {
                 <Navbar.Brand href="#home">PokeApp</Navbar.Brand>
                 <Nav className="mr-auto">
                     <Nav.Link href="/">Home</Nav.Link>
+                    <Nav.Link href="/pokemon">Pokemons</Nav.Link>
                 </Nav>
                 <Form inline>
                     <FormControl

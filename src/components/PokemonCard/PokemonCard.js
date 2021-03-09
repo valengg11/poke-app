@@ -1,25 +1,33 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { pokemonImage } from '../../Data'
-import {Card} from 'react-bootstrap'
+import { Card, Container, Row, Col } from 'react-bootstrap'
+import style from './PokemonCard.module.css'
 
 const PokemonCard = ({ pokemonName, url }) => {
   const urlPokemonImage = `${pokemonImage}${url.split('/')[6]}.png`
 
   return (
-    <div>
-      <Card>
-        <Card.Img variant="top" src={urlPokemonImage} />
-        <Card.Body>
-          <Card.Title>{pokemonName}</Card.Title>
-        </Card.Body>
-      </Card>
+    <div className={style.cardContainer}>
+      {/* <Container>
+        <Row>
+          <Col xs={6} sm={12} md={6}> */}
+            <Card className={style.card}>
+              <Card.Img className={style.image} variant="top" src={urlPokemonImage} />
+              <Card.Body className={style.body}>
+                <Card.Title>{pokemonName}</Card.Title>
+              </Card.Body>
+            </Card>
+          {/* </Col>
+        </Row>
+      </Container> */}
+
     </div>
   )
 }
 
 const mapStateToProps = (state) => {
-  return{
+  return {
 
   }
 }

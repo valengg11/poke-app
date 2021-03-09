@@ -1,0 +1,23 @@
+.card {
+  height: 100%;
+  /* width: 300px; */
+  margin: 20px auto;
+  border-radius: 10%;
+  align-items: center;
+  border: 1px solid #D3D3D3;
+}
+
+.image{
+    height: 190px;
+    width: 190px;
+  }
+  
+ .cardContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+ .body{
+   background-color: #D;
+ }

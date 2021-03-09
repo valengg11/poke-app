@@ -14,7 +14,7 @@ function App() {
       <Provider store={store}>
       <BrowserRouter>
       <Navigation/>
-        <Route path={'/'} exact component={PokemonList} />
+        <Route path={'/'} exact component={Home} />
         <Route path={'/pokemon'} exact component={PokemonList} />
       </BrowserRouter>
       </Provider>
