@@ -1,0 +1,42 @@
+.modal{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.title{
+    text-align: center;
+}
+.image{
+    height: 150px;
+}
+.description{
+    margin: 5%;
+}
+.description h1 {
+    font-size: 20px;
+}
+.charTitle{
+    font-size: 20px;
+}
+.characteristics{
+    margin: 5%;
+}
+.characteristics h1{
+    font-size: 20px;
+}
+.characteristics h2{
+    font-size: 15px;
+}
+.type {
+    margin: 5%;
+}
+.type h1{
+    font-size: 20px;
+}
+.type ul{
+    display: inline-block;
+}
+.stats{
+    margin: 5%;
+}
+.stats h1{
+    font-size: 20px;
+}

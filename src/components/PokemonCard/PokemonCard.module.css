@@ -2,21 +2,13 @@
   height: 100%;
   width: 200px;
   margin: 20px auto;
-  border-radius: 20%;
+  padding: 20px;
+  border-radius: 10px;
   align-items: center;
   border: 1px solid #D3D3D3;
 }
-
-.image{
-    height: 190px;
-    width: 190px;
-  }
-  
- .cardContainer{
+.cardContainer{
   display: flex;
   justify-content: center;
   align-items: center;
- }
-
- .body{
  }
